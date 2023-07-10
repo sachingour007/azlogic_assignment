@@ -1,4 +1,5 @@
 import "./App.css";
+import FAQAcordian from "./components/FAQAcordian";
 import FeaturedOffer from "./components/FeaturedOffer";
 import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
@@ -10,7 +11,7 @@ function App() {
       <div className="bg-[#F9F9F9]">
         <Header />
         {/* <HeroSection /> */}
-         <List/>
+        <List />
       </div>
 
       {/* <FeaturedOffer /> */}
