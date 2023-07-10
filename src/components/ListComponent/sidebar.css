@@ -1,0 +1,37 @@
+.tag {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #e0dbdb;
+  text-align: center;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  margin: 0 10px 6px 0;
+  cursor: pointer;
+}
+
+.meta-box {
+  border-bottom: 1px solid #e0dbdb;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.meta-box-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 6px;
+  font: 400 14px/20px Poppins;
+  letter-spacing: normal;
+  color: #000000de;
+}
+
+.icon {
+  height: 14px;
+}
+
+.map-container {
+  height: 200px;
+  width: 100%;
+}

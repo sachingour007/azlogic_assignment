@@ -9,12 +9,11 @@ function App() {
     <div className="w-[90%] mx-auto">
       <div className="bg-[#F9F9F9]">
         <Header />
-        <HeroSection />
+        {/* <HeroSection /> */}
+         <List/>
       </div>
 
-      <FeaturedOffer />
-
-      {/* <List/> */}
+      {/* <FeaturedOffer /> */}
     </div>
   );
 }
