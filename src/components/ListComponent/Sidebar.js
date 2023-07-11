@@ -3,14 +3,18 @@ import "./sidebar.css";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
+
 const Sidebar = () => {
   const [transmission, setTransmission] = useState();
+
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyApWXbxXd3OmTa2EeVqwLfV8ylGD_XrUg0",
   });
+
   const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
+
   return (
-    <div className="root px-2 py-4">
+    <div className="root px-2 py-4 bg-white">
       <div
         className="flex flex-wrap"
         style={{ borderBottom: "1px solid #e0dbdb", paddingBottom: "6px" }}
@@ -44,15 +48,29 @@ const Sidebar = () => {
           <h4 style={{ fontWeight: 600 }}>Location</h4>{" "}
           <span style={{ color: "#dc262a", marginLeft: "6px" }}>Hyderabad</span>
         </div>
-        <div style={{ background: "#e5e5e5" }}>
-          <h6>Total Duration</h6>
-          <h3>0d 2h 0m</h3>
+        <div
+          className="flex flex-col justify-center items-center mt-5 py-3"
+          style={{ background: "#e5e5e5" }}
+        >
+          <h6 className="text-[#737373] text-xs ">Total Duration</h6>
+          <h3 className="text-xs font-semibold text-[#4e4c4c] tracking-widest">
+            0d 2h 0m
+          </h3>
         </div>
       </div>
-      <div>
-        <h6>Station</h6>
-        <h5>Gandhi Bag. Metro Station</h5>
-        <p>Gandhi Bag. Metro Station Bengalore</p>
+      <div className=" ">
+        <div className="inline-block mb-3">
+          <h6 className="text-xs text-[#b5b4b4] font-semibold">Station</h6>
+          <div className="borderClass"></div>
+        </div>
+
+        <h5 className="text-sm text-[#4e4c4c] font-medium">
+          Gandhi Bag. Metro Station
+        </h5>
+        <p className="text-xs py-1 mb-1 font-medium text-[#b5b4b4]">
+          Gandhi Bag, Metro Station Bengalore
+        </p>
+
         {!isLoaded ? (
           <h1>Loading...</h1>
         ) : (
@@ -66,39 +84,52 @@ const Sidebar = () => {
           </GoogleMap>
         )}
       </div>
-      <div>
-        <h4>Tranmission type</h4>
-        <div className="flex">
-          <div>Geared</div>
-          <div>Gearless</div>
+      <div className="borderBottom"></div>
+
+      <div className="">
+        <h4 className="text-sm text-[#3c3c3c] font-semibold tracking-wider">
+          Tranmission type
+        </h4>
+        <div className="flex items-center justify-around w-[60%] rounded-lg border-gray-500 border my-4 px-2 py-2">
+          <div className="text-[#3c3c3c] text-sm font-medium">Geared</div>
+          <div className="border-l-2 border mx-[5px] h-8"></div>
+          <div className="text-[#3c3c3c] text-sm font-medium">Gearless</div>
         </div>
       </div>
-      <div>
-        Engine Capacity(CC)
-        <div>
-          <select name="" id="">
-            <option value="">100</option>
-          </select>
-          and above
+
+      <div className="borderBottom"></div>
+
+      <div className="flex flex-col gap-3 mt-6">
+        <h2 className="text-sm text-[#3c3c3c] font-semibold tracking-wider ">
+          Search By Brands
+        </h2>
+
+        <div className="flex flex-col gap-2">
+          <div className="flex gap-3 text-sm text-[#3c3c3c] font-medium">
+            <input className="border-black -border" type="checkbox" name="" />{" "}
+            Yamaha
+          </div>
+          <div className="flex gap-3 text-sm text-[#3c3c3c] font-medium">
+            <input className="border-black -border" type="checkbox" name="" />{" "}
+            Honda
+          </div>
+          <div className="flex gap-3 text-sm text-[#3c3c3c] font-medium">
+            <input className="border-black -border" type="checkbox" name="" />{" "}
+            Hero
+          </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <label htmlFor="">Search By Brands</label>
-        <div className="flex flex-col">
-          <div>
-            <input type="checkbox" /> Yamaha
-          </div>
-          <div>
-            <input type="checkbox" /> Honda{" "}
-          </div>
-          <div>
-            <input type="checkbox" /> Hero
-          </div>
-        </div>
-      </div>
-      <div>
-        <p>* Minimum booking should be for 24 hours</p>
-        <button>Apply</button>
+
+      <div className="borderBottom"></div>
+
+      <div className="mt-7">
+        <p className="text-[11px] px-1 text-[#727070] font-medium">
+          * Minimum booking should be for 24 hours
+        </p>
+
+        <button className="w-full border text-center my-5 py-2 text-white bg-gradient-to-b from-[rgb(222,38,48)] to-[rgb(244,12,89)] rounded-lg">
+          Apply
+        </button>
       </div>
     </div>
   );

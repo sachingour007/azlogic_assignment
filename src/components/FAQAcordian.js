@@ -6,7 +6,7 @@ const FAQAcordian = () => {
   const [acordianData, setAcordianData] = useState(data);
 
   return (
-    <main className="mt-10 bg-[#F9F9F9] mb-10">
+    <main className="bg-[#F9F9F9] mb-10">
       <div className="w-[80%] mx-auto pt-10 pb-10">
         <h2 className="text-3xl featurefont font-semibold ">FAQs</h2>
         <section>

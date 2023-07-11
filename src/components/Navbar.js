@@ -1,13 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 // import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 
 const Navbar = () => {
   return (
     <nav>
       <ul className="flex items-center gap-11 ">
-        <li className="fontForLi text-sm text-[#4A4A4A] font-sans hover:text-[rgb(222,38,48)]">
-          Home
-        </li>
+        <NavLink to={"/"}>
+          <li className="fontForLi text-sm text-[#4A4A4A] font-sans hover:text-[rgb(222,38,48)]">
+            Home
+          </li>
+        </NavLink>
         <li className="fontForLi text-sm text-[#4A4A4A] font-sans hover:text-[rgb(222,38,48)]">
           FAQ
         </li>

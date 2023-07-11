@@ -5,10 +5,11 @@
   text-align: center;
   padding: 4px 10px;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
   margin: 0 10px 6px 0;
   cursor: pointer;
+  color: #737373;
 }
 
 .meta-box {
@@ -34,4 +35,13 @@
 .map-container {
   height: 200px;
   width: 100%;
+}
+.borderClass{
+  border-bottom: 1px solid red;
+  width: 70px;
+  margin-top: 5px;
+}
+.borderBottom{
+  margin: 14px 0 12px 0;
+  border-bottom: 1px solid rgb(186, 185, 185);
 }
