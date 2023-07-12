@@ -5,12 +5,18 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 
 const Sidebar = () => {
-  const [transmission, setTransmission] = useState();
+  const [transmission, setTransmission] = useState(true);
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyApWXbxXd3OmTa2EeVqwLfV8ylGD_XrUg0",
   });
 
+  const ButtonOneHandler = () => {
+    setTransmission(true);
+  };
+  const ButtonTwoHandler = () => {
+    setTransmission(false);
+  };
   const center = useMemo(() => ({ lat: 18.52043, lng: 73.856743 }), []);
 
   return (
@@ -90,10 +96,28 @@ const Sidebar = () => {
         <h4 className="text-sm text-[#3c3c3c] font-semibold tracking-wider">
           Tranmission type
         </h4>
-        <div className="flex items-center justify-around w-[60%] rounded-lg border-gray-500 border my-4 px-2 py-2">
-          <div className="text-[#3c3c3c] text-sm font-medium">Geared</div>
+        <div className="flex items-center justify-around w-[65%] rounded-lg border-gray-500 border my-4">
+          <div
+            onClick={ButtonOneHandler}
+            className={
+              transmission
+                ? "bg-gray-500 py-3 px-2 mx-[2px] rounded-lg cursor-pointer text-white font-medium "
+                : "text-[#3c3c3c] pl-2 cursor-pointer text-sm font-medium"
+            }
+          >
+            Geared
+          </div>
           <div className="border-l-2 border mx-[5px] h-8"></div>
-          <div className="text-[#3c3c3c] text-sm font-medium">Gearless</div>
+          <div
+            onClick={ButtonTwoHandler}
+            className={
+              transmission
+                ? "text-[#3c3c3c] pr-2 text-sm font-medium cursor-pointer"
+                : "bg-gray-500 py-3 px-1 mx-[2px] rounded-lg text-white font-medium cursor-pointer "
+            }
+          >
+            Gearless
+          </div>
         </div>
       </div>
 
